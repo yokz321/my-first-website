@@ -23,3 +23,28 @@ body {
     border-radius: 8px;
     /* Give them rounded corners */
 }
+
+/* Style the input fields and button */
+.form-container input,
+.form-container button {
+    display: block;
+    /* Make each element take up its own line */
+    width: 95%;
+    /* Make them almost the full width of the container */
+    padding: 8px;
+    margin-bottom: 10px;
+    /* Add some space between the elements */
+    border: 1px solid #666;
+    border-radius: 4px;
+    background-color: #555;
+    color: #eee;
+}
+
+/* Style the button specifically to make it stand out */
+.form-container button {
+    background-color: #61dafb;
+    color: #222;
+    font-weight: bold;
+    cursor: pointer;
+    /* Change the mouse to a pointer on hover */
+}

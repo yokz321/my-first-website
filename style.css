@@ -48,3 +48,10 @@ body {
     cursor: pointer;
     /* Change the mouse to a pointer on hover */
 }
+
+/* Add a hove effect for button */
+.form-container button:hover {
+    background-color: #4caf50;
+    /* A nice green color */
+    color: white;
+}

@@ -1,0 +1,25 @@
+body {
+    background-color: #333;
+    /* A Dark Grey*/
+    color: #eee;
+    /* A light grey for the text */
+}
+
+/* Style the main title */
+#main-title {
+    text-align: center;
+    color: #61dafb;
+    /* a nice light blue */
+}
+
+/* Style for our containers */
+.form-container,
+.library-container {
+    background-color: #444;
+    margin: 20px;
+    /* Add some space around the containers */
+    padding: 15px;
+    /* Add some space inside the containers */
+    border-radius: 8px;
+    /* Give them rounded corners */
+}

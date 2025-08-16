@@ -1,38 +1,42 @@
-// Select the form and the input fields
+// --- 1. SELECTORS (Your tools) ---
 const bookForm = document.querySelector('#book-form');
 const titleInput = document.querySelector('#title');
 const authorInput = document.querySelector('#author');
-
-// Select the container where new books will be added
 const libraryContainer = document.querySelector('.library-container');
 
+
+// --- 2. FUNCTION DEFINITIONS (Your "worker" functions) ---
+function createBookCard(title, author) {
+    const bookCard = document.createElement('div');
+    bookCard.classList.add('book-card');
+
+    bookCard.innerHTML = `
+    <h3>${title}</h3>
+    <p>by ${author}</p>
+  `;
+
+    libraryContainer.appendChild(bookCard);
+}
+
+
+// --- 3. EVENT LISTENERS (Your "manager" function) ---
 bookForm.addEventListener('submit', function (event) {
-    // This is the function that will run when the form is submitted
-    event.preventDefault(); // VERY IMPORTANT: Prevents the page from reloading
+    event.preventDefault(); // Prevents the page from reloading
 
-    // 1. Get the values from the input fields
-    const title = titleInput.value;
-    const author = authorInput.value;
+    // Get the values from the input fields
+    const title = titleInput.value.trim();
+    const author = authorInput.value.trim();
 
-    // 2. Log the value to the console to confirm they were captured
-    console.log('Book Title:', title);
-    console.log('Book Author:', author);
+    // The validation check:
+    if (title === '' || author === '') {
+        alert('Please fill out both Title and Author.'); // Simple feedback for now
+        return; // Stop the function from running further
+    }
 
-    // 3. Clear the input fields for the next entry
+    // Call the worker function to do the heavy lifting
+    createBookCard(title, author);
+
+    // Clear the input fields for the next entry
     titleInput.value = '';
     authorInput.value = '';
-
-    // 4. Create the new book card element
-    const bookCard = document.createElement('div');
-    bookCard.classList.add('book-card'); // Add a class for styling
-
-    // 5. Create the HTML content for the card
-    bookCard.innerHTML = `
-        <h3>${title}</h3>
-        <p>by ${author}</p>
-    `;
-
-    // 6. Append the new card to the library container
-    libraryContainer.appendChild(bookCard);
-
 });

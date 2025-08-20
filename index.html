@@ -7,25 +7,41 @@
 </head>
 
 <body>
-    <p>Mission update: Changes have been made and are ready for deployment</p>
-
     <h1 id="main-title">My Personal Library</h1>
 
-    <div class="form-container">
-        <h2>Add New Book</h2>
-        <form id="book-form">
-            <label for="title">Title</label>
-            <input type="text" id="title" placeholder="Book Title" required>
-            <label for="author">Author</label>
-            <input type="text" id="author" placeholder="Author Name" required>
-            <button type="submit">Add Book</button>
-        </form>
+    <div class="controls">
+        <button id="new-book-btn">+ Add New Book</button>
     </div>
 
     <div class="library-container">
         <h2>Book List</h2>
-        <!-- The book cards will go here later-->
+        <!-- The book cards will go here dynamically -->
     </div>
+
+    <!-- The Modal -->
+    <div id="addBookModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+
+            <!-- THIS IS THE ORIGINAL FORM, MOVED HERE -->
+            <div class="form-container">
+                <h2>Add New Book</h2>
+                <form id="book-form">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" placeholder="Book Title" required>
+
+                    <label for="author">Author</label>
+                    <input type="text" id="author" placeholder="Author Name" required>
+
+                    <button type="submit">Add Book</button>
+                </form>
+            </div>
+            <!-- END OF MOVED FORM -->
+
+        </div>
+    </div> <!-- This closes the modal div -->
+
     <script src="script.js" defer></script>
 </body>
 
